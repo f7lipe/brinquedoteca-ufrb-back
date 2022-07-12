@@ -19,7 +19,5 @@ export async function createUser(name, email, password, phone, cpf, address){
     };
 
     const passwordHash = bcrypt.hashSync(password, 10);
-    const userCreated = await userRepository.createUser(name, email, passwordHash, phone, cpf, address);
-
-    return userCreated
+    await userRepository.createUser(name, email, passwordHash, phone, cpf, address);
 }
