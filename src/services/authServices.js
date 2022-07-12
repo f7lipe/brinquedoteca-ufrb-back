@@ -13,3 +13,8 @@ export function signIn(email, password){
 
     return {user, token}
 }
+
+export async function signUp(name, email, password, phone, cpf, address){
+    const passwordHash = bcrypt.hashSync(password, 10);
+    await userServices.createUser(name, email, passwordHash, phone, cpf, address);
+}

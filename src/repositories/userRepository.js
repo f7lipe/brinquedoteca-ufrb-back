@@ -12,3 +12,13 @@ export async function getUserByEmail(email) {
     const [user] = [users];
     return user
 }
+
+export async function createUser(name, email, password, phone, cpf, address) {
+    return  db.query(
+        `
+        INSERT INTO users (name, email, password, phone, cpf, address)
+        VALUES ($1, $2, $3, $4, $5, $6)
+        `,
+        [name, email, password, phone, cpf, address]
+    );
+}

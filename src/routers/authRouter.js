@@ -11,7 +11,12 @@ authRouter.post(
     authController.signIn
     );
     
-authRouter.post("/signup", authController.signUp);
+authRouter.post(
+    "/signup", 
+    schemaMiddlewares.validateSchema(authSchemas.signupSchema),
+    authController.signUp
+    );
+    
 authRouter.post(
     "/signout", 
     validateToken,

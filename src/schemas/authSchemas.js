@@ -4,7 +4,9 @@ const signupSchema = joi.object({
     username: joi.string().required(),
     email: joi.string().email().required(),
     password: joi.string().required(),
-    imageUrl: joi.string().uri().required(),
+    address: joi.string().required(),
+    phone: joi.string().required(),
+    cpf: joi.string().regex(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/).required(),
 });
 
 const signinSchema = joi.object({
