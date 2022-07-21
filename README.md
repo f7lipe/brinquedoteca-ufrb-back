@@ -69,7 +69,7 @@ GET /children
 
     
 ```yml 
-GET /children
+PUT /children
     - Rota para atualizar uma criança através do id 
     - headers: {Bareer token}
     - body: {
@@ -81,6 +81,12 @@ GET /children
     }
 ```
 
+```yml 
+DELETE /children/:id
+    - Rota para deletar uma criança através do id 
+    - headers: {Bareer token}
+    - body: { }
+```
 
 
 
