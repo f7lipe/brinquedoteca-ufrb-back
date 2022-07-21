@@ -69,7 +69,7 @@ GET /children
 
     
 ```yml 
-PUT /children
+PUT /children/:id
     - Rota para atualizar uma criança através do id 
     - headers: {Bareer token}
     - body: {
@@ -106,7 +106,7 @@ https://nodejs.org/en/download/
 git clone https://github.com/f7lipe/brinquedoteca-ufrb-back/
 ```
 
-⚙️ Crie uma variável de ambiente (.env) na raíz do seu projeto. 
+⚙️ Crie uma variável de ambiente (.env) na raíz do seu projeto com as variáveis a seguir. 
 ```yml
    PORT = 5000
    DATABASE_URL = postgres://postgres:password6@database_url/database_name
