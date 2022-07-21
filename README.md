@@ -1,7 +1,7 @@
 # <p align = "center"> API - Brinquedoteca UFRB </p>
 
 
-##  :clipboard: Description
+##  :clipboard: Descrição
 
 Interface para gerenciamento administrativo da brinquedoteca da UFRB. 
 
