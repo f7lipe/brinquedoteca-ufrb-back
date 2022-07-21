@@ -17,7 +17,7 @@ Interface para gerenciamento administrativo da brinquedoteca da UFRB.
 ***
 
 ## :rocket: Rotas
-### :baby: Children 
+### :baby: Criança 
 ```yml
 POST /children
     - Rota para registar uma nova criança
