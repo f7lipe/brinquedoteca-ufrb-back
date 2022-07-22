@@ -1,14 +1,13 @@
 import { Router } from "express";
-import authRouter from "./authRouter.js";
-import permanenceRouter from "./permanenceRouter.js";
+import childrenRouter from "./childrenRouter.js";
 
 const router = Router()
-router.use(authRouter)
-router.use(permanenceRouter)
+router.use(childrenRouter)
 
 export {router}
 
-//autenticação (login, recuperar senha, criar conta)
-//controle de pemanência 
-//cadastro de crianças e responsáveis
-
+// adicionar criança ao banco 
+// adicionar responsável ao banco
+// obter id do responsável
+// adicionar criança ao responsável
+// adicionar criança ao responsável
