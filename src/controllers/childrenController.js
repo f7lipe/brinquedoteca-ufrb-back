@@ -15,3 +15,10 @@ export async function getById(req, res) {
     const children = await childrenServices.getChildrenById(id);
     res.send(children);
 }
+
+export async function update(req, res) {
+    const { id } = req.params;
+    const  objectWithValues  = req.body; //{name: 'João', cpf: '123456789'}
+    await childrenServices.updateChildren(id, objectWithValues);
+    res.sendStatus(204);
+}

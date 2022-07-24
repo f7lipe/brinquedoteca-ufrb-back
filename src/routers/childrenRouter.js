@@ -24,4 +24,10 @@ childrenRouter.get(
     childrenController.getById
 )
 
+childrenRouter.put(
+    "/children/:id",
+    //token validation middleware
+    childrenController.update
+)
+
 export default childrenRouter;

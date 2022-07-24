@@ -51,3 +51,17 @@ export async function getChildrenById(id) {
 
     return children[0];
 }
+
+export async function updateChildren(id, objectWithValues) {
+    const keys = Object.keys(objectWithValues); //[name, cpf]
+    const fields = keys.map((key, index) => `${key} = $${index+1}`).join(', '); //name = $1, cpf = $2
+    const values = Object.values(objectWithValues); //['João', '123456789']
+    await db.query(
+        `
+        UPDATE childrens SET ${fields} WHERE id = $${keys.length+1}
+        `,
+        [...values, id] //['João', '123456789', 2]
+    )
+
+
+}

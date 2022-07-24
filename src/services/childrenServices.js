@@ -55,3 +55,9 @@ export async function getChildrenById(id) {
     if(!children) throw {status: 404, message: "Children not found"};
     return children;
 }
+
+export async function updateChildren(id, objectWithValues) {
+    const existingChildren = await childrenRepository.getChildrenById(id);
+    if(!existingChildren) throw {status: 404, message: "Children not found"};
+    await childrenRepository.updateChildren(id, objectWithValues);
+}
