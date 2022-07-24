@@ -1,5 +1,6 @@
 import * as childrenRepository from '../repositories/childrenRepository.js';
-import * as guardianReposioty from '../repositories/guardianRepository.js';
+import * as guardianRepository from '../repositories/guardianRepository.js';
+import * as childrenGuardianRepository from '../repositories/childrenGuardianRepository.js';
 
 export async function createChildren(children){
     
@@ -22,18 +23,18 @@ export async function createChildren(children){
 
    await guardians.forEach(async guardian => {
 
-        const existingGuardian = await guardianReposioty.findGuardian(guardian.cpf);
+        const existingGuardian = await guardianRepository.findGuardian(guardian.cpf);
         
         if(!existingGuardian) {
 
-            const createdGuardian = await guardianReposioty.createGuardian(guardian);
+            const createdGuardian = await guardianRepository.createGuardian(guardian);
             const { id: createdGuardianId } = createdGuardian;
-            await guardianReposioty.addRelationship(childrenId, createdGuardianId);
+            await childrenGuardianRepository.addRelationship(childrenId, createdGuardianId);
             
         } else {
 
             const { id: existingGuardianId } = existingGuardian;
-            await guardianReposioty.addRelationship(childrenId, existingGuardianId);
+            await childrenGuardianRepository.addRelationship(childrenId, existingGuardianId);
 
         }
    });
@@ -65,10 +66,10 @@ export async function updateChildren(id, objectWithValues) {
 export async function deleteChildren(id) {
     const existingChildren = await childrenRepository.getChildrenById(id);
     if(!existingChildren) throw {status: 404, message: "Children not found"};
-    const relationships = await guardianReposioty.getChildrensGuardiansRelationship(id);
+    const relationships = await childrenGuardianRepository.getChildrensGuardiansRelationship(id);
     if(relationships) relationships.forEach(async relationship => { 
         console.log(relationship)
-        await guardianReposioty.destroyRelationship(id, relationship.guardian_id);
+        await childrenGuardianRepository.destroyRelationship(id, relationship.guardian_id);
     });
     else throw {status: 400, message: "Children has no guardians"};
     await childrenRepository.deleteChildren(id);

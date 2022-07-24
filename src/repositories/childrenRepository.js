@@ -31,11 +31,13 @@ export async function getAllChildrens() {
         `
 
         SELECT * FROM childrens ch
-        JOIN childrens_guardians cg ON ch.id = cg.children_id
-        JOIN guardians g ON cg.guardian_id = g.id
+
 
         `
     );
+
+    // JOIN childrens_guardians cg ON ch.id = cg.children_id
+   // JOIN guardians g ON cg.guardian_id = g.id
 
     return children;
 }
@@ -59,6 +61,7 @@ export async function updateChildren(id, objectWithValues) {
     await db.query(
         `
         UPDATE childrens SET ${fields} WHERE id = $${keys.length+1}
+
         `,
         [...values, id] //['João', '123456789', 2]
     )
