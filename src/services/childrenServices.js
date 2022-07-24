@@ -65,8 +65,11 @@ export async function updateChildren(id, objectWithValues) {
 export async function deleteChildren(id) {
     const existingChildren = await childrenRepository.getChildrenById(id);
     if(!existingChildren) throw {status: 404, message: "Children not found"};
-    const relationship = await guardianReposioty.getChildrensGuardiansRelationship(id);
-    if(relationship) await guardianReposioty.destroyRelationship(id, relationship.guardian_id);
+    const relationships = await guardianReposioty.getChildrensGuardiansRelationship(id);
+    if(relationships) relationships.forEach(async relationship => { 
+        console.log(relationship)
+        await guardianReposioty.destroyRelationship(id, relationship.guardian_id);
+    });
     else throw {status: 400, message: "Children has no guardians"};
     await childrenRepository.deleteChildren(id);
 }
