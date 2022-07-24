@@ -22,3 +22,9 @@ export async function update(req, res) {
     await childrenServices.updateChildren(id, objectWithValues);
     res.sendStatus(204);
 }
+
+export async function deleteOne(req, res) {
+    const { id } = req.params;
+    await childrenServices.deleteChildren(id);
+    res.sendStatus(204);
+}

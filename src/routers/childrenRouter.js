@@ -30,4 +30,10 @@ childrenRouter.put(
     childrenController.update
 )
 
+childrenRouter.delete(
+    "/children/:id",
+    //token validation middleware
+    childrenController.deleteOne
+)
+
 export default childrenRouter;

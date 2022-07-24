@@ -65,3 +65,12 @@ export async function updateChildren(id, objectWithValues) {
 
 
 }
+
+export async function deleteChildren(id) {
+    await db.query(
+        `
+        DELETE FROM childrens WHERE id = $1
+        `,
+        [id]
+    )
+}
