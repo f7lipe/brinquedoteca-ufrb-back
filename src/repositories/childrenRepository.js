@@ -39,3 +39,15 @@ export async function getAllChildrens() {
 
     return children;
 }
+
+export async function getChildrenById(id) {
+    const {rows: children} = await db.query(
+        `
+        SELECT * FROM childrens ch 
+        WHERE ch.id = $1
+        `,
+        [id]
+    );
+
+    return children[0];
+}

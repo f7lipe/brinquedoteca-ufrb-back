@@ -6,6 +6,12 @@ export async function create(req, res) {
 }
 
 export async function getAll(req, res) {
-    const children = await childrenServices.getAllChildrens();
+    const childrens = await childrenServices.getAllChildrens();
+    res.send(childrens);
+}
+
+export async function getById(req, res) {
+    const { id } = req.params;
+    const children = await childrenServices.getChildrenById(id);
     res.send(children);
 }

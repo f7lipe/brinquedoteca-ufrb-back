@@ -49,3 +49,9 @@ export async function getAllChildrens() {
     const childrens = await childrenRepository.getAllChildrens();
     return childrens;
 }
+
+export async function getChildrenById(id) { 
+    const children = await childrenRepository.getChildrenById(id);
+    if(!children) throw {status: 404, message: "Children not found"};
+    return children;
+}
