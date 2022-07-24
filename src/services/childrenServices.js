@@ -13,7 +13,7 @@ export async function createChildren(children){
     //criar relação entre criança e responsáveis    
 
 
-    const { cpf, guardians} = children
+    const { cpf, guardians } = children
 
     await verifyIfChildrenExists(cpf)
 
@@ -45,3 +45,7 @@ async function verifyIfChildrenExists(cpf) {
     if(existingChildren)  throw {status: 400, message: "Children already exists"};
 }
 
+export async function getAllChildrens() {
+    const childrens = await childrenRepository.getAllChildrens();
+    return childrens;
+}

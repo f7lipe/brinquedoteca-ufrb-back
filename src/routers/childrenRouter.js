@@ -12,5 +12,10 @@ childrenRouter.post(
     childrenController.create
     )
 
+childrenRouter.get(
+    "/children",
+    //token validation middleware
+    childrenController.getAll
+)
 
 export default childrenRouter;

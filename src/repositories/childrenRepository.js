@@ -25,3 +25,17 @@ export async function createChildren(children) {
     
     return createdChildren[0]
 }
+
+export async function getAllChildrens() {
+    const {rows: children} = await db.query(
+        `
+
+        SELECT * FROM childrens ch
+        JOIN childrens_guardians cg ON ch.id = cg.children_id
+        JOIN guardians g ON cg.guardian_id = g.id
+
+        `
+    );
+
+    return children;
+}
