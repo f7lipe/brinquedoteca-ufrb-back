@@ -24,4 +24,28 @@ export async function createGuardian(guardian) {
      return createdGuardian[0];
 }
 
+export async function getAllGuardians() {
+    const {rows: guardian} = await db.query(
+        `
+
+        SELECT * FROM guardians ch
+
+
+        `
+    );
+
+    return guardian;
+}
+
+export async function getGuardianById(id) {
+    const {rows: guardian} = await db.query(
+        `
+        SELECT * FROM guardians ch 
+        WHERE ch.id = $1
+        `,
+        [id]
+    );
+
+    return guardian[0];
+}
 
