@@ -8,5 +8,5 @@ export const childrenSchema = joi.object({
     address: joi.string().required(),
     obs: joi.string().allow(""),
     photo_url: joi.string().uri().allow(""),
-    guardians: joi.array().items(guardianSchema.required().min(1))
+    guardians: joi.array().items(guardianSchema.required().min(1)).required()
     })
