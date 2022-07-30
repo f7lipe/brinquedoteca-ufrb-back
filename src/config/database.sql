@@ -4,7 +4,7 @@ CREATE TABLE "childrens" (
 	"cpf" varchar(255) NOT NULL,
 	"birthdate" timestamp with time zone NOT NULL,
 	"address" varchar(255) NOT NULL,
-	"obs" TEXT(1000),
+	"obs" TEXT,
 	"photo_url" varchar,
 	CONSTRAINT "childrens_pk" PRIMARY KEY ("id")
 ) WITH (
@@ -28,10 +28,9 @@ CREATE TABLE "permanence" (
 	"id" serial NOT NULL,
 	"entry_date" timestamp with time zone NOT NULL,
 	"exit_date" timestamp with time zone,
-	"state" bool NOT NULL,
 	"children_id" int NOT NULL,
 	"guardian_entrance_id" int NOT NULL,
-	"guardian_exit_id" int NOT NULL,
+	"guardian_exit_id" int,
 	CONSTRAINT "permanence_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
