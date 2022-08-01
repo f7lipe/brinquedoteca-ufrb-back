@@ -150,7 +150,7 @@ git clone https://github.com/f7lipe/brinquedoteca-ufrb-back/
 ⚙️ Crie uma variável de ambiente (.env) na raíz do seu projeto com as variáveis a seguir. 
 ```yml
    PORT = 5000
-   DATABASE_URL = postgres://user_name:password6@database_url/database_name
+   DATABASE_URL = postgres://user_name:password@database_url/database_name
    MODE = DEV
 ``` 
 
