@@ -161,7 +161,7 @@ git clone https://github.com/f7lipe/brinquedoteca-ufrb-back/
 npm install
 ```
 
-🏁 Finalizado o processo, rode
+🏁 Finalizado o processo, execute
 
 ```
 npm run dev
