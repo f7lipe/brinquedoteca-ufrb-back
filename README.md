@@ -89,6 +89,47 @@ DELETE /children/:id
 ```
 
 
+### 🏠 Pemanência 
+```yml
+POST /permanence
+    - Rota para abrir uma nova permanência
+    - headers: {Bareer token}
+    - body:{
+        "entryDate": "26-august-2022",
+        "obs": "",
+        "childrenId": "11",
+        "guardianEntryId": "1"
+        }
+      }
+
+```
+
+```yml 
+GET /permanence
+    - Rota para obter todas as permanências 
+    - headers: {Bareer token}
+    - body: {}
+```
+
+```yml 
+GET /permanence/:id
+    - Rota para obter uma permanência através do id
+    - headers: {Bareer token}
+    - body: {}
+```
+    
+```yml
+POST /permanence/close
+    - Rota para fechar uma nova permanência
+    - headers: {Bareer token}
+    - body:{
+        "exitDate": "26-august-2022",
+        "obs": "",
+        "childrenId": "11",
+        "guardianExitId": "2"
+      }
+
+```
 
 ***
 
@@ -109,8 +150,8 @@ git clone https://github.com/f7lipe/brinquedoteca-ufrb-back/
 ⚙️ Crie uma variável de ambiente (.env) na raíz do seu projeto com as variáveis a seguir. 
 ```yml
    PORT = 5000
-   DATABASE_URL = postgres://postgres:password6@database_url/database_name
-   MODE = PROD
+   DATABASE_URL = postgres://user_name:password@database_url:PORT/database_name
+   MODE = DEV
 ``` 
 
 
@@ -120,7 +161,7 @@ git clone https://github.com/f7lipe/brinquedoteca-ufrb-back/
 npm install
 ```
 
-🏁 Finalizado o processo, rode
+🏁 Finalizado o processo, execute
 
 ```
 npm run dev
