@@ -120,7 +120,7 @@ GET /permanence/:id
     
 ```yml
 POST /permanence/close
-    - Rota para fechar uma nova permanência
+    - Rota para fechar uma permanência
     - headers: {Bareer token}
     - body:{
         "exitDate": "26-august-2022",
