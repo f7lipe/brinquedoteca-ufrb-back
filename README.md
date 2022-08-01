@@ -89,6 +89,48 @@ DELETE /children/:id
 ```
 
 
+### 🏠 Pemanência 
+```yml
+POST /permanence
+    - Rota para abrir uma nova permanência
+    - headers: {Bareer token}
+    - body:{
+        "entryDate": "26-august-2022",
+        "obs": "",
+        "childrenId": "11",
+        "guardianEntryId": "1"
+        }
+      }
+
+```
+
+```yml 
+GET /permanence
+    - Rota para obter todas as permanências 
+    - headers: {Bareer token}
+    - body: {}
+```
+
+```yml 
+GET /permanence/:id
+    - Rota para obter uma permanência através do id
+    - headers: {Bareer token}
+    - body: {}
+```
+    
+```yml
+POST /permanence/close
+    - Rota para fechar uma nova permanência
+    - headers: {Bareer token}
+    - body:{
+        "exitDate": "26-august-2022",
+        "obs": "",
+        "childrenId": "11",
+        "guardianExitId": "2"
+        }
+      }
+
+```
 
 ***
 
