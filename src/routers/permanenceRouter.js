@@ -17,4 +17,10 @@ permanenceRouter.post(
     //token validation middleware 
     permanenceController.close)
 
+
+permanenceRouter.get(
+    "/permanence",
+    //token validation middleware
+    permanenceController.getAll)
+
 export default permanenceRouter

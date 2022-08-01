@@ -18,3 +18,8 @@ export async function closePermanence(permanence) {
     if (!existentGuardian) throw { status: 404, message: 'Guardian not found' };
     await permanenceRepository.closePermanence(permanence);
 }
+
+export async function getAllPermanences() {
+    const permanences = await permanenceRepository.getAllPermanences();
+    return permanences;
+}

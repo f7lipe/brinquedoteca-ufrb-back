@@ -26,3 +26,14 @@ export async function closePermanence(permanence) {
     `, [permanence.exitDate, permanence.guardianExitId, permanence.childrenId]
     );
 }
+
+export async function getAllPermanences() {
+    const { rows } = await db.query(`
+    SELECT p.id, p.children_id as "childrenId",  p.guardian_entrance_id as "guarianEntranceId", p.entry_date as "entryDate", p.exit_date as "exitDate", c.name as "childrenName", g.name as "guardianName" 
+    FROM permanence p
+    JOIN childrens c ON c.id = p.children_id
+    JOIN guardians g ON g.id = p.guardian_entrance_id
+    `);
+    console.log(rows);
+    return rows;
+}
