@@ -8,7 +8,7 @@ export const createPermanenceSchema = joi.object({
 });
 
 export const closePermanenceSchema = joi.object({
-    exit_date: joi.date().required(),
+    exitDate: joi.date().required(),
     obs: joi.string().allow(""),
     childrenId: joi.number().required(),
     guardianExitId: joi.number().required(),

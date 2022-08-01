@@ -40,8 +40,8 @@ export async function getAllGuardians() {
 export async function getGuardianById(id) {
     const {rows: guardian} = await db.query(
         `
-        SELECT * FROM guardians ch 
-        WHERE ch.id = $1
+        SELECT * FROM guardians g 
+        WHERE g.id = $1
         `,
         [id]
     );
