@@ -127,7 +127,6 @@ POST /permanence/close
         "obs": "",
         "childrenId": "11",
         "guardianExitId": "2"
-        }
       }
 
 ```
