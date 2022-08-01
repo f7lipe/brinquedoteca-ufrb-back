@@ -36,8 +36,14 @@ export async function getAllChildrens() {
         `
     );
 
-    // JOIN childrens_guardians cg ON ch.id = cg.children_id
-   // JOIN guardians g ON cg.guardian_id = g.id
+    /*
+    SELECT c.id, c.name, c.cpf, c.birthDate, c.address, c.obs, c.photo_url, g.name as "guardianName" 
+        FROM childrens c
+        JOIN childrens_guardians cg ON c.id = cg.children_id
+        JOIN guardians g ON g.id = cg.guardian_id
+        JOIN permanence p ON p.children_id = c.id
+    
+    */
 
     return children;
 }

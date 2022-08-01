@@ -23,3 +23,9 @@ export async function getAllPermanences() {
     const permanences = await permanenceRepository.getAllPermanences();
     return permanences;
 }
+
+export async function getPermanenceById(id) {
+    const permanence = await permanenceRepository.getPermanenceById(id);
+    if(!permanence) throw { status: 404, message: 'Permanence not found' };
+    return permanence;
+}

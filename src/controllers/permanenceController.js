@@ -12,5 +12,10 @@ export async function close(req, res){
 
 export async function getAll(req, res){
     const permanences = await permanenceServices.getAllPermanences();
-    res.sendStatus(200)
+    res.status(200).send(permanences)
+}
+
+export async function getById(req, res){
+    const permanence = await permanenceServices.getPermanenceById(req.params.id);
+    res.status(200).send(permanence)
 }

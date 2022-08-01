@@ -23,4 +23,10 @@ permanenceRouter.get(
     //token validation middleware
     permanenceController.getAll)
 
+permanenceRouter.get(
+    "/permanence/:id",
+    //token validation middleware
+    permanenceController.getById)
+
+
 export default permanenceRouter
