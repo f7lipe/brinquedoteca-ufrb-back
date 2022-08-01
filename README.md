@@ -151,7 +151,7 @@ git clone https://github.com/f7lipe/brinquedoteca-ufrb-back/
 ```yml
    PORT = 5000
    DATABASE_URL = postgres://postgres:password6@database_url/database_name
-   MODE = PROD
+   MODE = DEV
 ``` 
 
 
