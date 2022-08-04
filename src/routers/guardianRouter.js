@@ -29,11 +29,11 @@ guardianRouter.put(
     //token validation middleware
     guardianController.update
 )
-
+*/
 guardianRouter.delete(
     "/guardian/:id",
     //token validation middleware
     guardianController.deleteOne
 )
-*/
+
 export default guardianRouter;

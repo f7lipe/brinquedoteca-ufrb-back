@@ -49,3 +49,12 @@ export async function getGuardianById(id) {
     return guardian[0];
 }
 
+
+export async function deleteGuardian(id) {
+    await db.query(
+        `
+        DELETE FROM guardians WHERE id = $1
+        `,
+        [id]
+    )
+}

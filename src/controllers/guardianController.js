@@ -22,10 +22,9 @@ export async function update(req, res) {
     await guardianServices.updateChildren(id, objectWithValues);
     res.sendStatus(204);
 }
-
+*/
 export async function deleteOne(req, res) {
     const { id } = req.params;
-    await guardianServices.deleteChildren(id);
+    await guardianServices.deleteGuardian(id);
     res.sendStatus(204);
 }
-*/
