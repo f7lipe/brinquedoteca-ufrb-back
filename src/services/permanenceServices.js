@@ -20,12 +20,12 @@ export async function closePermanence(permanence) {
 }
 
 export async function getAllPermanences() {
-    const permanences = await permanenceRepository.getAllPermanences();
+    const permanences = await permanenceRepository.getAllPermanencesComplete();
     return permanences;
 }
 
 export async function getPermanenceById(id) {
-    const permanence = await permanenceRepository.getPermanenceById(id);
+    const permanence = await permanenceRepository.getPermanenceByIdFinish(id);
     if(!permanence) throw { status: 404, message: 'Permanence not found' };
     return permanence;
 }

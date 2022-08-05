@@ -38,6 +38,13 @@ export async function getAllPermanences() {
     return rows;
 }
 
+export async function getAllPermanencesComplete() {
+    const { rows } = await db.query(`
+    SELECT * FROM permanence
+    `);
+    return rows;
+}
+
 
 export async function getPermanenceById(id) {
     const { rows } = await db.query(`
@@ -47,6 +54,14 @@ export async function getPermanenceById(id) {
     JOIN guardians g1 ON g1.id = p.guardian_entrance_id
     JOIN guardians g2 ON g2.id = p.guardian_exit_id
     WHERE p.id = $1
+    `, [id]
+    );
+    return rows[0];
+}
+
+export async function getPermanenceByIdFinish(id) {
+    const { rows } = await db.query(`
+    SELECT * FROM permanence WHERE id=$1
     `, [id]
     );
     return rows[0];
