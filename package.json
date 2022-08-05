@@ -1,11 +1,14 @@
 {
   "name": "brinquedoteca-ufrb-back",
+  "jest": {
+    "verbose": true
+  },
   "type": "module",
   "version": "1.0.0",
   "description": "API para gerenciamento de informações da Brinquedoteca da UFRB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --",
     "start": "npx nodemon src/app.js",
     "dev": "nodemon src/app.js"
   },
@@ -36,5 +39,9 @@
     "nodemon": "^2.0.16",
     "pg": "^8.7.3",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.10",
+    "jest": "^28.1.3"
   }
 }

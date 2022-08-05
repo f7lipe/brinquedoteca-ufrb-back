@@ -19,8 +19,10 @@ export async function createChildren(children) {
     await verifyIfChildrenExists(cpf)
 
     const createdChildren = await childrenRepository.createChildren(children);
-    const { id: childrenId } = createdChildren;
+    
+    /*
 
+    const { id: childrenId } = createdChildren;
     await guardians.forEach(async guardian => {
 
         const existingGuardian = await guardianRepository.findGuardian(guardian.cpf);
@@ -38,6 +40,7 @@ export async function createChildren(children) {
 
         }
     });
+    */
 }
 
 
