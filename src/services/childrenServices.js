@@ -18,7 +18,7 @@ export async function createChildren(children) {
 
     await verifyIfChildrenExists(cpf)
 
-    const createdChildren = await childrenRepository.createChildren(children);
+    return await childrenRepository.createChildren(children);
     
     /*
 

@@ -31,6 +31,7 @@ CREATE TABLE "permanence" (
 	"children_id" int NOT NULL,
 	"guardian_entrance_id" int NOT NULL,
 	"guardian_exit_id" int,
+	"obs" TEXT,
 	CONSTRAINT "permanence_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
